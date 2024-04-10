@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-text-decoration: 0;
+          text-decoration: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+  line-height: 0;
+}
+
+/* this fixes the error in the animation that was displaying the scrollbar */
+/* remove all button styles */
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  line-height: 1.3;
+  text-rendering: optimizeSpeed;
+  font-family: "Libre Franklin", sans-serif;
+  background-color: rgb(250, 250, 250);
+}
+
+header {
+  align-self: center;
+  padding-bottom: 40px;
+}
+
+main {
+  display: flex;
+  align-items: unset;
+  justify-content: center;
+  padding-top: 60px;
+  flex-direction: column;
+  text-align: center;
+}
+@media (max-width: 840px) {
+  main {
+    font-size: 32px;
+    margin: 24px;
+  }
+}
+main p {
+  font-weight: 400;
+  font-size: 20px;
+  padding-bottom: 40px;
+  color: hsl(209, 33%, 12%);
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 48px;
+  line-height: 1.4;
+  color: hsl(0, 0%, 59%);
+  padding-bottom: 16px;
+}
+@media (max-width: 840px) {
+  h1 {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+}
+
+strong {
+  color: hsl(209, 33%, 12%);
+}
+
+main > img {
+  max-width: 640px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+@media (max-width: 840px) {
+  main > img {
+    max-width: 100%;
+  }
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding-bottom: 20px;
+}
+form button {
+  padding: 18px 64px;
+  background-color: hsl(223, 87%, 63%);
+  color: white;
+  transition: all 0.6s ease;
+}
+form button:hover {
+  transition: all 0.6s ease;
+  background-color: #1f5aef;
+}
+@media (max-width: 840px) {
+  form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+input[type=email] {
+  flex-basis: 65%;
+  padding: 18px 30px;
+  color: hsl(0, 0%, 59%);
+  border: 2px solid hsl(223, 100%, 88%);
+}
+input[type=email] ::-moz-placeholder {
+  color: hsl(223, 100%, 88%);
+}
+input[type=email] ::placeholder {
+  color: hsl(223, 100%, 88%);
+}
+input[type=email]:focus::-moz-placeholder {
+  color: hsl(223, 87%, 63%);
+  font-weight: 600;
+}
+input[type=email]:focus::placeholder {
+  color: hsl(223, 87%, 63%);
+  font-weight: 600;
+}
+input[type=email]:focus {
+  outline: none;
+  border: 2px solid blue;
+}
+
+input,
+button {
+  border-radius: 50px;
+}
+@media (max-width: 840px) {
+  input,
+  button {
+    font-size: 20px;
+  }
+}
+
+.error-msg {
+  opacity: 0;
+  text-align: left;
+  margin-left: 32px;
+  color: hsl(354, 100%, 66%);
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 20px; /* 166.667% */
+  letter-spacing: 0.15px;
+}
+@media (max-width: 600px) {
+  .error-msg {
+    text-align: center;
+  }
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: 24px;
+}
+.social svg {
+  max-width: 24px;
+  fill: hsl(223, 87%, 63%);
+}
+.social svg:hover {
+  cursor: pointer;
+  transition: all 0.6s ease;
+  fill: #1f5aef;
+}
+
+footer {
+  font-size: 16px;
+  color: hsl(0, 0%, 59%);
+  padding-bottom: 20px;
+}/*# sourceMappingURL=style.css.map */

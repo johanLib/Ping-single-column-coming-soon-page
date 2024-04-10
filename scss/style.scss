@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600;700&display=swap");
+
+@import "reset";
+@import "colors";
+@import "mixins";
+@import "mediaQueries";
+//@import "animations";
+
+body {
+  @include simpleFlex(center, center);
+  min-height: 100vh;
+  line-height: 1.3;
+  text-rendering: optimizeSpeed;
+  font-family: "Libre Franklin", sans-serif;
+  background-color: rgb(250, 250, 250);
+}
+
+header {
+  align-self: center;
+  padding-bottom: 40px;
+}
+
+main {
+  @include simpleFlex(center);
+  padding-top: 60px;
+  flex-direction: column;
+  text-align: center;
+
+  @include display(tablet) {
+    font-size: 32px;
+    margin: 24px;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 20px;
+    padding-bottom: 40px;
+    color: $black;
+  }
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 48px;
+  line-height: 1.4;
+  color: $gray;
+  padding-bottom: 16px;
+
+  @include display(tablet) {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+}
+
+strong {
+  color: $black;
+}
+
+main > img {
+  max-width: 640px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+
+  @include display(tablet) {
+    max-width: 100%;
+  }
+}
+
+form {
+  @include simpleFlex(center, center);
+  gap: 16px;
+  padding-bottom: 20px;
+
+  button {
+    padding: 18px 64px;
+    background-color: $blue;
+    color: white;
+    @include transition;
+    &:hover {
+      @include transition;
+      background-color: darken($color: $blue, $amount: 10%);
+    }
+  }
+
+  @include display(tablet) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+input[type="email"] {
+  flex-basis: 65%;
+  padding: 18px 30px;
+  color: $gray;
+  border: 2px solid $light-blue;
+  ::placeholder {
+    color: $light-blue;
+  }
+  &:focus::placeholder {
+    color: $blue;
+    font-weight: 600;
+  }
+  &:focus {
+    outline: none;
+    border: 2px solid blue;
+  }
+}
+
+input,
+button {
+  @include border-radius;
+
+  @include display(tablet) {
+    font-size: 20px;
+  }
+}
+
+.error-msg {
+  opacity: 0;
+  text-align: left;
+  margin-left: 32px;
+  color: $red;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 20px; /* 166.667% */
+  letter-spacing: 0.15px;
+
+  @include display(mobile) {
+    text-align: center;
+  }
+}
+
+.social {
+  @include simpleFlex(center, center);
+  gap: 20px;
+  padding-bottom: 24px;
+
+  svg {
+    max-width: 24px;
+    fill: $blue;
+
+    &:hover {
+      cursor: pointer;
+      @include transition;
+      fill: darken($color: $blue, $amount: 10%);
+    }
+  }
+}
+
+footer {
+  font-size: 16px;
+  color: $gray;
+  padding-bottom: 20px;
+}
